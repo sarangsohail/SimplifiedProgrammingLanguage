@@ -45,6 +45,10 @@ namespace SimplifiedProgrammingLanguage
                 if (s.Contains("draw") && s.Contains("rectangle") == true)
                 {
                     for (int i = 0; stringArray.Length(); i++) {
+
+
+
+
                     }
 
                     // find a way get this string command in the rectangle array
