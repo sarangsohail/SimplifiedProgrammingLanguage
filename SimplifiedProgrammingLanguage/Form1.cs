@@ -9,19 +9,24 @@ namespace SimplifiedProgrammingLanguage
     public partial class Form1 : Form
     {
 
+        Graphics g;
+
         public Form1()
         {
             InitializeComponent();
+            g = drawingCanvas.CreateGraphics();
+
         }
 
         String[] commandArray;
-         Graphics g = PictureBox1.
 
-
+        int penX = 0;
+        int penY = 0;
+        Boolean penStatus;
 
         private void commandInputter_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -32,7 +37,7 @@ namespace SimplifiedProgrammingLanguage
             commandArray = input.Split(',');
 
             //rectangle array 
-            string[] stringArray = {""};
+            string[] stringArray = { "" };
 
 
 
@@ -42,23 +47,29 @@ namespace SimplifiedProgrammingLanguage
             int rectHeight;
             foreach (String s in commandArray)
             {
-                if (s.Contains("draw") && s.Contains("rectangle") == true)
+                if (s.Equals("penup"))
                 {
-                    for (int i = 0; stringArray.Length(); i++) {
+                    penStatus = true;
+                    //add some colour in the back to let the user know that the pen is up
 
+                }
+                else if (s.Equals("pendown"))
+                {
+                    penStatus = false;
+                    //add some colour in the back to let the user know that the pen is down
 
+                }
 
+                // add a switch case or another condition checker to verify the pen status and draw the shape
 
-                    }
-
-                    // find a way get this string command in the rectangle array
+                if (s.Contains("draw") && s.Contains("rectangle") == true)
+                {// find a way get this string command in the rectangle array}
 
                 }
 
 
             }
-
-            
         }
     }
 }
+
