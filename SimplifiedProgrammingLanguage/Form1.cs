@@ -34,6 +34,22 @@ namespace SimplifiedProgrammingLanguage
         {
             String input = commandInputter.Text;
 
+            String[] command = input.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            for(int i =0; i < command.Length; i++)
+            {
+                String lineCommand = command[i];
+
+                String[] lineCommandArray = lineCommand.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (lineCommandArray[0].Contains()
+
+            }
+            //split the string by the line in the array
+            // loop through the array and then and split by the comma
+            //then check each index position of the array and compare it to things like 'draw' and 'move'
+            //then process the command
+
             commandArray = input.Split(',');
 
             //rectangle array 
@@ -52,6 +68,11 @@ namespace SimplifiedProgrammingLanguage
                     penStatus = true;
                     //add some colour in the back to let the user know that the pen is up
 
+                    if(s.Equals("draw") && s.Contains("rectangle"))
+                    {
+
+
+                    }
                 }
                 else if (s.Equals("pendown"))
                 {
@@ -61,11 +82,6 @@ namespace SimplifiedProgrammingLanguage
                 }
 
                 // add a switch case or another condition checker to verify the pen status and draw the shape
-
-                if (s.Contains("draw") && s.Contains("rectangle") == true)
-                {// find a way get this string command in the rectangle array}
-
-                }
 
 
             }
