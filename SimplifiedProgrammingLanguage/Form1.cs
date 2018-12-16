@@ -32,6 +32,9 @@ namespace SimplifiedProgrammingLanguage
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            ShapeGenerator shapeGenerator = new ShapeGenerator();
+
             String input = commandInputter.Text;
 
             String[] command = input.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
@@ -42,9 +45,10 @@ namespace SimplifiedProgrammingLanguage
 
                 String[] lineCommandArray = lineCommand.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-                if (lineCommandArray[0].Contains()
+                shapeGenerator.GetShape(lineCommandArray);
 
             }
+
             //split the string by the line in the array
             // loop through the array and then and split by the comma
             //then check each index position of the array and compare it to things like 'draw' and 'move'
