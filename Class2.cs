@@ -51,4 +51,3 @@ class Circle : Shape
         return base.ToString() + "  " + this.radius;
     }
 }
-}

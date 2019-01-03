@@ -49,6 +49,20 @@ namespace SimplifiedProgrammingLanguage
             return base.ToString() + "    " + this.x + "," + this.y + " : ";
         }
 
+        public double calculateArea()
+        {
+            throw new NotImplementedException();
+        }
+
+        public double calculatePerimeter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetShape()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-}
+

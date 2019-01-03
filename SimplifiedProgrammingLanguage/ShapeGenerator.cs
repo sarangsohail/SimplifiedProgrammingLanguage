@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
-    class ShapeGenerator {
+    class ShapeGenerator
+    {
 
         public ShapesInterface GetShape(params string[] shapeCommands)
         {
@@ -17,19 +18,25 @@ namespace SimplifiedProgrammingLanguage
             }
             else if (shapeCommands.Equals("RECTANGLE"))
             {
-               // return new Rectangle();
+                return new Rectangle();
+            }
+            else if (shapeCommands.Equals("Triangle"))
+            {
+                return new Triangle();
 
             }
-            else if (shapeCommands.Equals("SQUARE"))
+            else if (shapeCommands.Equals("Polygon"))
             {
-               // return new Square();
+                // todo - return new polygon
             }
+
             else
             {
-                //if we get here then what has been passed in is inkown so throw an appropriate exception
+                //if we get here then what has been passed in is unkown so throw an appropriate exception
                 System.ArgumentException argEx = new System.ArgumentException("Factory error: " + shapeType + " does not exist");
                 throw argEx;
             }
         }
 
     }
+}

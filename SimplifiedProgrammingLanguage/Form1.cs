@@ -26,8 +26,7 @@ namespace SimplifiedProgrammingLanguage
 
         private void commandInputter_TextChanged(object sender, EventArgs e)
         {
-
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace SimplifiedProgrammingLanguage
 
             }
 
-            //split the string by the line in the array
+            //split the string by the line in the array - done
             // loop through the array and then and split by the comma
             //then check each index position of the array and compare it to things like 'draw' and 'move'
             //then process the command
@@ -61,6 +60,8 @@ namespace SimplifiedProgrammingLanguage
 
 
 
+            /*
+             * -------------this is redundant - it think
             //circle Array
             ArrayList circleList = new ArrayList();
             int rectWidth;
@@ -89,6 +90,8 @@ namespace SimplifiedProgrammingLanguage
 
 
             }
+
+    */
         }
     }
 }
