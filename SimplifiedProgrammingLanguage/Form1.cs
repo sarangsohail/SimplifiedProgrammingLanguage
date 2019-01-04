@@ -72,11 +72,75 @@ namespace SimplifiedProgrammingLanguage
                             MessageBox.Show("Oops, Shape error - ", error.Message);
                         }
 
-                    }
+
+                        if (singleLineCommand[0].Equals("Rectangle"))
+                        {
+
+                            try
+                            {
+                                string shapeCommand = singleLineCommand[1];
+                                string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                                shape.set(Pen.X, Pen.Y, float.Parse(command[0]), float.Parse(command[1]));
+                                shapes.Add(shape);
+                            }
+                            catch (Exception error)
+                            {
+                                MessageBox.Show("Oops, Shape error - ", error.Message);
+                            }
+
+                            if (singleLineCommand[0].Equals("Triangle"))
+                            {
+
+                                try
+                                {
+                                    string shapeCommand = singleLineCommand[1];
+                                    string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                    Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                                    shape.set(Pen.X, Pen.Y, float.Parse(command[0]), float.Parse(command[1]));
+                                    shapes.Add(shape);
+                                }
+                                catch (Exception error)
+                                {
+                                    MessageBox.Show("Oops, Shape error - ", error.Message);
+                                }
+
+                                if (singleLineCommand[0].Equals("Polygon"))
+                                { 
+                                    try
+                                    {
+                                        string shapeCommand = singleLineCommand[1];
+                                        string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                        float[] points = new float[command.Length + 2];
+                                        points[0] = Pen.X;
+                                        points[1] = Pen.Y;
+
+                                        for (int ii = 0; ii < points.Length; ii++)
+                                        {
+                                            points[i] = float.Parse(command[i - 2]);
+                                        }
+                                        //check if enough points are inserted in
+                                        if (points.Length % 2 == 0 || points.Length >= 6)
+                                        {
+                                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                                            shape.set(points);
+                                            shapes.Add(shape);
+                                        }
+
+                                    }
+                                    catch (Exception error)
+                                    {
+                                        MessageBox.Show("Oops, Shape error - ", error.Message);
+                                    }
 
 
 
-                }
+
+                                }
+
+
+
+                            }
 
 
 
@@ -85,7 +149,7 @@ namespace SimplifiedProgrammingLanguage
 
 
             }
-
+/*
             //split the string by the line in the array - done
             //split it by a comma -  done
             //then check each index position of the array and compare it to things like 'draw' and 'move'
@@ -129,7 +193,7 @@ namespace SimplifiedProgrammingLanguage
 
             }
             
-            
+            */
             
             
             /*
@@ -168,10 +232,10 @@ namespace SimplifiedProgrammingLanguage
 
 
             }
-
-    */
+        
+    
         }
     }
 }
-
+*/
 //maybe add a undo feature???
