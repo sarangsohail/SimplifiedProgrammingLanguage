@@ -9,6 +9,7 @@ namespace SimplifiedProgrammingLanguage
 {
     class Rectangle : ShapesInterface
     {
+
         public double calculateArea()
         {
             throw new NotImplementedException();

@@ -15,14 +15,12 @@ namespace SimplifiedProgrammingLanguage
         {
             InitializeComponent();
             g = drawingCanvas.CreateGraphics();
-
+            g.Clear(Color.White);
         }
-
-        String[] commandArray;
 
         int penX = 0;
         int penY = 0;
-        Boolean penStatus;
+        Boolean penStatus = false;
 
         private void commandInputter_TextChanged(object sender, EventArgs e)
         {
@@ -36,31 +34,82 @@ namespace SimplifiedProgrammingLanguage
 
             String input = commandInputter.Text;
 
-            String[] command = input.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] commands = input.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
-            for(int i =0; i < command.Length; i++)
+            for (int i = 0; i < commands.Length; i++)
             {
-                String lineCommand = command[i];
+                string line = commands[i];
+                string[] singleCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-                String[] lineCommandArray = lineCommand.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                if(singleCommand[0].Equals("moveTo"))
+                {
 
-                shapeGenerator.GetShape(lineCommandArray);
+
+
+
+                }
+
+
+
+
+
+
 
             }
 
             //split the string by the line in the array - done
-            // loop through the array and then and split by the comma
+            //split it by a comma -  done
             //then check each index position of the array and compare it to things like 'draw' and 'move'
             //then process the command
 
             commandArray = input.Split(',');
 
+          for (int i = 0; i < commandArray.Length; i++)
+            {
+                
+                if(string.Equals(commandArray[i], "penup", StringComparison.OrdinalIgnoreCase))
+                {
+                    penStatus = false;
+                }
+
+                if (string.Equals(commandArray[i], "pendown", StringComparison.OrdinalIgnoreCase))
+                {
+                    penStatus = true;
+                }
+
+
+                if (string.Equals(commandArray[i], "moveto", StringComparison.OrdinalIgnoreCase))
+                {
+                    i++;
+                    penX = int.Parse(commandArray[i]);
+                    i++;
+                    penY = int.Parse(commandArray[i]);
+
+                }
+
+                    if (commandArray[i].Equals("rectangle"))
+                    {
+                        i++;
+                        int recWidth = int.Parse(commandArray[i]);
+                        i++;
+                        int recLength = int.Parse(commandArray[i]);
+
+                    Shape s = (Shape) shapeGenerator.GetShape("rectangle");
+                    s.set(Color.Black, recX, recY, )
+                    }
+
+            }
+            
+            
+            
+            
+            /*
             //rectangle array 
             string[] stringArray = { "" };
 
 
 
-            /*
+           
              * -------------this is redundant - it think
             //circle Array
             ArrayList circleList = new ArrayList();
@@ -96,3 +145,4 @@ namespace SimplifiedProgrammingLanguage
     }
 }
 
+//maybe add a undo feature???

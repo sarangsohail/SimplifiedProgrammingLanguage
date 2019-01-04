@@ -20,8 +20,6 @@ class Circle : Shape
         //list[0] is x, list[1] is y, list[2] is radius
         base.set(colour, list[0], list[1]);
         this.radius = list[2];
-
-
     }
 
 

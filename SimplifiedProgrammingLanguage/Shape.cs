@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+//sort this out comment wise
 namespace SimplifiedProgrammingLanguage
 {
     abstract class Shape : ShapesInterface

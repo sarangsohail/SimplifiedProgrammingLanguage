@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
+    //interface providing all methods necessary for when I create the shapes
     interface ShapesInterface
     {
         void set(Color c, params int[] list);
