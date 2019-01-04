@@ -2,7 +2,7 @@
 
 namespace SimplifiedProgrammingLanguage
 {
-    public class Polygon : Shape
+    class Polygon : Shape
     {
         float[] Points;
 
@@ -24,13 +24,13 @@ namespace SimplifiedProgrammingLanguage
 
         public override void draw(Graphics g)
         {
-            Pen p = new Pen(Color.Yellow, 2);
-            PointF[] pts = new PointF[Points.Length / 2];
-            for (int i = 0; i < pts.Length; i++)
+            Pen pen = new Pen(Color.Yellow, 2);
+            PointF[] points = new PointF[Points.Length / 2];
+            for (int i = 0; i < points.Length; i++)
             {
-                pts[i] = new PointF(Points[i * 2], Points[(i * 2) + 1]);
+                points[i] = new PointF(Points[i * 2], Points[(i * 2) + 1]);
             }
-            g.DrawPolygon(p, pts);
+            g.DrawPolygon(pen, points);
         }
 
         public override string ToString()

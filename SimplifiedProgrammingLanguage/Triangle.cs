@@ -9,29 +9,6 @@ namespace SimplifiedProgrammingLanguage
 {
     class Triangle : Shapes
     {
-        public double calculateArea()
-        {
-            throw new NotImplementedException();
-        }
-
-        public double calculatePerimeter()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void draw(Graphics g)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void GetShape()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void set(Color c, params int[] list)
-        {
-            throw new NotImplementedException();
-        }
+        //todo write this triangle up
     }
 }
