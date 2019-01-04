@@ -50,10 +50,23 @@ namespace SimplifiedProgrammingLanguage
                     {
                         // split the command by commas
                         string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-
-                    }catch
+                        Pen = new PointF(float.Parse(param[0]), float.Parse(param[1]));
+                    }
+                    catch (Exception error)
                     {
-                        //TODO -  add this catch exception and set the pen's new position
+                        //todo later - be more specific in the error handling
+                        MessageBox.Show("There's a problem" + error.Message);
+                    }
+
+                    if (singleLineCommand[0].Equals("Circle")){
+
+                        try
+                        {
+                            string param = singleLineCommand[1];
+                            Shape s = factory.GetShape(command[0]);
+
+                        }
+
                     }
 
 

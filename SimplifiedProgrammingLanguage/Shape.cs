@@ -9,40 +9,31 @@ using System.Threading.Tasks;
 //sort this out comment wise
 namespace SimplifiedProgrammingLanguage
 {
-    abstract class Shape : ShapesInterface
+    abstract class Shape : Shapes
     {
-        protected Color colour; //shape's colour
-        protected int x, y; //not I could use c# properties for this
+        protected float x, y; 
         public Shape()
         {
-            colour = Color.Red;
-            x = y = 100;
+            
         }
-
-
-        public Shape(Color colour, int x, int y)
+        
+        public Shape(float x, float y)
         {
-
-            this.colour = colour; //shape's colour
-            this.x = x; //its x pos
-            this.y = y; //its y pos
-            //can't provide anything else as "shape" is too general
+            //pen coordinates
+            this.x = x;
+            this.y = y;
         }
 
-        //the three methods below are from the Shapes interface
+        //the three methods below are from the shapesInterface
         //here we are passing on the obligation to implement them to the derived classes by declaring them as abstract
         public abstract void draw(Graphics g); //any derrived class must implement this method
-        public abstract double calcArea();
-        public abstract double calcPerimeter();
-
         //set is declared as virtual so it can be overridden by a more specific child version
         //but is here so it can be called by that child version to do the generic stuff
         //note the use of the param keyword to provide a variable parameter list to cope with some shapes having more setup information than others
-        public virtual void set(Color colour, params int[] list)
+        public virtual void set(params float[] coordinates)
         {
-            this.colour = colour;
-            this.x = list[0];
-            this.y = list[1];
+            this.x = coordinates[0];
+            this.y = coordinates[1];
         }
 
 
@@ -51,20 +42,6 @@ namespace SimplifiedProgrammingLanguage
             return base.ToString() + "    " + this.x + "," + this.y + " : ";
         }
 
-        public double calculateArea()
-        {
-            throw new NotImplementedException();
-        }
-
-        public double calculatePerimeter()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void GetShape()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

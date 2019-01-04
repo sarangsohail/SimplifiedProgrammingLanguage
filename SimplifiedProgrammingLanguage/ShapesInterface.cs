@@ -12,8 +12,6 @@ namespace SimplifiedProgrammingLanguage
     {
         void set(Color c, params int[] list);
         void draw(Graphics g);
-        double calculateArea();
-        double calculatePerimeter();
-        void GetShape();
+       
     }
 }
