@@ -9,6 +9,9 @@ namespace SimplifiedProgrammingLanguage
     public partial class Form1 : Form
     {
 
+        ArrayList shapes = new ArrayList();
+        private PointF Pen { get; set; }
+
         Graphics g;
 
         public Form1()
@@ -39,11 +42,19 @@ namespace SimplifiedProgrammingLanguage
             for (int i = 0; i < commands.Length; i++)
             {
                 string line = commands[i];
-                string[] singleCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                string[] singleLineCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-                if(singleCommand[0].Equals("moveTo"))
+                if(singleLineCommand[0].Equals("moveTo"))
                 {
+                    try
+                    {
+                        // split the command by commas
+                        string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
+                    }catch
+                    {
+                        //TODO -  add this catch exception and set the pen's new position
+                    }
 
 
 
