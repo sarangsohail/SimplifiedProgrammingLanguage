@@ -62,9 +62,14 @@ namespace SimplifiedProgrammingLanguage
 
                         try
                         {
-                            string param = singleLineCommand[1];
-                            Shape s = factory.GetShape(command[0]);
-
+                            string shapeCommand = singleLineCommand[1];
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                            shape.set(Pen.X, Pen.Y, float.Parse(shapeCommand));
+                            shapes.Add(shape);
+                        }
+                        catch (Exception error)
+                        {
+                            MessageBox.Show("Oops, Shape error - ", error.Message);
                         }
 
                     }

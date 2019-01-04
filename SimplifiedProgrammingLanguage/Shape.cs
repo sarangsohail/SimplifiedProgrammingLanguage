@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 
 //sort this out comment wise
@@ -32,14 +27,14 @@ namespace SimplifiedProgrammingLanguage
         //note the use of the param keyword to provide a variable parameter list to cope with some shapes having more setup information than others
         public virtual void set(params float[] coordinates)
         {
-            this.x = coordinates[0];
-            this.y = coordinates[1];
+            x = coordinates[0];
+            y = coordinates[1];
         }
 
 
         public override string ToString()
         {
-            return base.ToString() + "    " + this.x + "," + this.y + " : ";
+            return base.ToString() + "Points: X -  " + this.x + ", Y - " + this.y + " : ";
         }
 
     }

@@ -9,35 +9,28 @@ namespace SimplifiedProgrammingLanguage
 {
     class ShapeGenerator
     {
-
-        public ShapesInterface GetShape(string shapeCommands)
+        public Shape GetShape(string shapeCommand)
         {
-            if (shapeCommands.Equals("circle"))
+            if (shapeCommand.Equals("Circle"))
             {
                 return new Circle();
-            }
-            else if (shapeCommands.Equals("rectangle"))
+
+            }else if (shapeCommand.Equals("Rectangle"))
             {
                 return new Rectangle();
-            }
-            else if (shapeCommands.Equals("triangle"))
+
+            }else if (shapeCommand.Equals("Triangle"))
             {
                 return new Triangle();
-
-            }
-            else if (shapeCommands.Equals("poylogon"))
+            }else if (shapeCommand.Equals("Polygon"))
             {
-                // todo - return new polygon
+                return new Polygon();
             }
-
-            else
-            {
-                //if we get here then what has been passed in is unkown so throw an appropriate exception
-                System.ArgumentException argEx = new System.ArgumentException("Factory error: " + shapeType + " does not exist");
+            else{
+                //sort this out
+                System.ArgumentException argEx = new System.ArgumentException("Factory error: " + shapeCommand + " does not exist");
                 throw argEx;
             }
-            
         }
-
     }
 }
