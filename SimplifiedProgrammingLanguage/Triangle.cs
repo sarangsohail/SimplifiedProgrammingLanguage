@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
-    class Triangle : ShapesInterface
+    class Triangle : Shapes
     {
         public double calculateArea()
         {

@@ -7,32 +7,38 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
-    class Rectangle : ShapesInterface
+    class Rectangle : Shape
     {
 
-        public double calculateArea()
+        float width, height;
+
+        public Rectangle() : base()
         {
-            throw new NotImplementedException();
+
         }
 
-        public double calculatePerimeter()
+        public Rectangle(float x, float y, float Width, float Height) : base(x, y)
         {
-            throw new NotImplementedException();
+            this.width = Width;
+            this.height = Height;
         }
 
-        public void draw(Graphics g)
+        public override void set(params float[] list)
         {
-            throw new NotImplementedException();
+            base.set(list[0], list[1]);
+            width = list[2];
+            height = list[3];
         }
 
-        public void GetShape()
+        public override void draw(Graphics g)
         {
-            throw new NotImplementedException();
+            Pen p = new Pen(Color.Black);
+            g.DrawRectangle(p, x, y, width, height);
         }
 
-        public void set(Color c, params int[] list)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return base.ToString() + "  Width:" + width + "  Height:" + height;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace SimplifiedProgrammingLanguage
 
         private void commandInputter_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace SimplifiedProgrammingLanguage
                 string line = commands[i];
                 string[] singleLineCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-                if(singleLineCommand[0].Equals("moveTo"))
+                if (singleLineCommand[0].Equals("moveTo"))
                 {
                     try
                     {
@@ -58,7 +58,8 @@ namespace SimplifiedProgrammingLanguage
                         MessageBox.Show("There's a problem" + error.Message);
                     }
 
-                    if (singleLineCommand[0].Equals("Circle")){
+                    if (singleLineCommand[0].Equals("Circle"))
+                    {
 
                         try
                         {
@@ -106,7 +107,7 @@ namespace SimplifiedProgrammingLanguage
                                 }
 
                                 if (singleLineCommand[0].Equals("Polygon"))
-                                { 
+                                {
                                     try
                                     {
                                         string shapeCommand = singleLineCommand[1];
@@ -133,22 +134,33 @@ namespace SimplifiedProgrammingLanguage
                                         MessageBox.Show("Oops, Shape error - ", error.Message);
                                     }
 
-
-
-
+                                  
                                 }
 
-
-
                             }
+                        }
+                    }
+                }
 
-
-
-
-
-
-
+                for (int j = 0; j < shapes.Count; j++)
+                {
+                    Shape shape;
+                    shape = (Shape)shapes[j];
+                    if (shape != null)
+                    {
+                        shape.draw(g);
+                        Console.WriteLine(shape.ToString());
+                    }
+                    else
+                    {
+                        Console.WriteLine("invalid shape in array");
+                    }
+                }
             }
+        }
+    }
+}
+
 /*
             //split the string by the line in the array - done
             //split it by a comma -  done

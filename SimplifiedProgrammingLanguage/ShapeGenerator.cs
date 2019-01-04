@@ -21,7 +21,7 @@ namespace SimplifiedProgrammingLanguage
 
             }else if (shapeCommand.Equals("Triangle"))
             {
-                return new Triangle();
+              return new Triangle();
             }else if (shapeCommand.Equals("Polygon"))
             {
                 return new Polygon();

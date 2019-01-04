@@ -4,7 +4,7 @@
 //sort this out comment wise
 namespace SimplifiedProgrammingLanguage
 {
-    abstract class Shape : Shapes
+    abstract class Shape : ShapesInterface
     {
         protected float x, y; 
         public Shape()
