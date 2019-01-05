@@ -23,14 +23,14 @@ namespace SimplifiedProgrammingLanguage
             this.height = Height;
         }
 
-        public override void set(params float[] list)
+        public override void Set(params float[] list)
         {
-            base.set(list[0], list[1]);
+            base.Set(list[0], list[1]);
             width = list[2];
             height = list[3];
         }
 
-        public override void draw(Graphics g)
+        public override void Draw(Graphics g)
         {
             Pen p = new Pen(Color.Black);
             g.DrawRectangle(p, x, y, width, height);

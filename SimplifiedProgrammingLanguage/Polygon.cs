@@ -16,13 +16,13 @@ namespace SimplifiedProgrammingLanguage
             this.Points = Points;
         }
 
-        public override void set(params float[] list)
+        public override void Set(params float[] list)
         {
-            base.set(list[0], list[1]);
+            base.Set(list[0], list[1]);
             Points = list;
         }
 
-        public override void draw(Graphics g)
+        public override void Draw(Graphics g)
         {
             Pen pen = new Pen(Color.Yellow, 2);
             PointF[] points = new PointF[Points.Length / 2];

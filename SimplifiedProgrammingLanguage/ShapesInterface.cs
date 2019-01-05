@@ -10,8 +10,8 @@ namespace SimplifiedProgrammingLanguage
     //interface providing all methods necessary for when I create the shapes
     interface ShapesInterface
     {
-        void set(params float[] list);
-        void draw(Graphics g);
+        void Set(params float[] list);
+        void Draw(Graphics g);
        
     }
 }

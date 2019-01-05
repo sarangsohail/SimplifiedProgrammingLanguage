@@ -18,14 +18,14 @@ namespace SimplifiedProgrammingLanguage
         }
 
 
-        public override void set(params float[] list)
+        public override void Set(params float[] list)
         {
             //list[0] is x, list[1] is y, list[2] is radius
-            base.set(list[0], list[1]);
+            base.Set(list[0], list[1]);
             radius = list[2];
         }
 
-        public override void draw(Graphics g)
+        public override void Draw(Graphics g)
         {
 
             Pen p = new Pen(Color.Black, 2);
