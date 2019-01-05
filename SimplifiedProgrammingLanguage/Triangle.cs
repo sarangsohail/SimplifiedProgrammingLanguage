@@ -7,8 +7,41 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
-    class Triangle : Shapes
+     class Triangle : Shape
     {
-        //todo write this triangle up
+        float bottom, join;
+
+        public Triangle() : base()
+        {
+
+        }
+
+        public Triangle(float x, float y, float bottom, float join) : base(x, y)
+        {
+            this.bottom = bottom;
+            this.join = join;
+        }
+
+        public override void set(params float[] list)
+        {
+            base.set(list[0], list[1]);
+            bottom = list[2];
+            join = list[3];
+        }
+
+        public override void draw(Graphics g)
+        {
+            Pen p = new Pen(Color.Black);
+            PointF[] points = 
+            {
+                new PointF(x, y), new PointF(x + bottom, y), new PointF(x, y + join)
+            };
+            g.DrawPolygon(p, points);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + "  Bottom:" + bottom + "  Join:" + join;
+        }
     }
 }
