@@ -24,7 +24,7 @@ namespace SimplifiedProgrammingLanguage
 
         public override void Draw(Graphics g)
         {
-            Pen pen = new Pen(Color.Yellow, 2);
+            Pen pen = new Pen(Color.Black);
             PointF[] points = new PointF[Points.Length / 2];
             for (int i = 0; i < points.Length; i++)
             {

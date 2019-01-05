@@ -9,10 +9,10 @@ namespace SimplifiedProgrammingLanguage
     public partial class Form1 : Form
     {
 
-        ArrayList shapes = new ArrayList();
+        ArrayList shapesArray = new ArrayList();
         private PointF Pen { get; set; }
 
-        Graphics g;
+        Graphics g; 
 
         public Form1()
         {
@@ -31,10 +31,10 @@ namespace SimplifiedProgrammingLanguage
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
             ShapeGenerator shapeGenerator = new ShapeGenerator();
 
-            String input = commandInputter.Text;
+            string input = commandInputter.Text;
 
             string[] commands = input.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -43,114 +43,110 @@ namespace SimplifiedProgrammingLanguage
                 string line = commands[i];
                 string[] singleLineCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-
-
                 if (singleLineCommand[0].Equals("moveTo"))
                 {
                     try
                     {
-                        string[] command = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                        Pen = new PointF(float.Parse(command[0]), float.Parse(command[1]));
-
+                        string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        Pen = new PointF(float.Parse(param[0]), float.Parse(param[1]));
                     }
                     catch (Exception ee)
                     {
                         MessageBox.Show(ee.Message);
+                            
                     }
+                    
+                }
 
-                    if (singleLineCommand[0].Equals("Circle"))
+                if (singleLineCommand[0].Equals("Circle"))
                     {
                         try
                         {
-                            string param = singleLineCommand[1];
-                            Shape s = shapeGenerator.GetShape(singleLineCommand[0]);
-                            s.Set(Pen.X, Pen.Y, float.Parse(param));
-                            shapes.Add(s);
+                            string command = singleLineCommand[1];
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                            shape.Set(Pen.X, Pen.Y, float.Parse(command));
+                            shapesArray.Add(shape);
+                            shape.Draw(g);
 
-                        }
-                        catch (Exception ee)
+                    }
+                    catch (Exception ee)
                         {
                             MessageBox.Show(ee.Message);
                         }
 
                     }
 
-                    if (singleLineCommand[0].Equals("Rectangle"))
+                if (singleLineCommand[0].Equals("Triangle"))
+                {
+                    try
                     {
+                        string param = singleLineCommand[1];
+                        string[] para = param.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        Shape shapes = shapeGenerator.GetShape(singleLineCommand[0]);
+                        shapes.Set(Pen.X, Pen.Y, float.Parse(para[0]), float.Parse(para[1]));
+                        shapesArray.Add(shapes);
+                        shapes.Draw(g);
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show(ee.Message);
+                    }
+                   
+                }
 
+                if (singleLineCommand[0].Equals("Rectangle"))
+                    {
                         try
                         {
                             string shapeCommand = singleLineCommand[1];
                             string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                             Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
                             shape.Set(Pen.X, Pen.Y, float.Parse(command[0]), float.Parse(command[1]));
-                            shapes.Add(shape);
-                        }
-                        catch (Exception error)
+                            shapesArray.Add(shape);
+                            shape.Draw(g);
+                    }
+                    catch (Exception error)
                         {
                             MessageBox.Show("Oops, Shape error - ", error.Message);
                         }
+                }
 
-                        if (singleLineCommand[0].Equals("Triangle"))
+
+                if (singleLineCommand[0].Equals("Polygon"))
+                {
+                    try
+                    {
+                        string param = singleLineCommand[1];
+                        string[] para = param.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        float[] Points = new float[para.Length + 2];
+                        Points[0] = Pen.X;
+                        Points[1] = Pen.Y;
+                        for (int j = 2; j < Points.Length; j++)
                         {
-
-                            try
-                            {
-                                string shapeCommand = singleLineCommand[1];
-                                string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                                Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
-                                shape.Set(Pen.X, Pen.Y, float.Parse(command[0]), float.Parse(command[1]));
-                                shapes.Add(shape);
-                            }
-                            catch (Exception error)
-                            {
-                                MessageBox.Show("Oops, Shape error - ", error.Message);
-                            }
-
-                            if (singleLineCommand[0].Equals("Polygon"))
-                            {
-                                try
-                                {
-                                    string shapeCommand = singleLineCommand[1];
-                                    string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                                    float[] points = new float[command.Length + 2];
-                                    points[0] = Pen.X;
-                                    points[1] = Pen.Y;
-
-                                    for (int ii = 0; ii < points.Length; ii++)
-                                    {
-                                        points[i] = float.Parse(command[i - 2]);
-                                    }
-                                    //check if enough points are inserted in
-                                    if (points.Length % 2 == 0 || points.Length >= 6)
-                                    {
-                                        Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
-                                        shape.Set(points);
-                                        shapes.Add(shape);
-                                    }
-
-                                }
-                                catch (Exception error)
-                                {
-                                    MessageBox.Show("Oops, Shape error - ", error.Message);
-                                }
-
-
-                            }
-
+                            Points[j] = float.Parse(para[j - 2]);
                         }
+                 
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                            shape.Set(Points);
+                            shapesArray.Add(shape);
+                            shape.Draw(g);
+                        
                     }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show(ee.Message);
+                    }
+
                 }
             }
-
-            for (int j = 0; j < shapes.Count; j++)
+            for (int j = 0; j < shapesArray.Count; j++)
             {
-                Shape shape;
-                shape = (Shape)shapes[j];
-                if (shape != null)
+                Shape s;
+                s = (Shape)shapesArray[j];
+                if (s != null)
                 {
-                    shape.Draw(g);
-                    Console.WriteLine(shape.ToString());
+                    s.Draw(g);
+                    Console.WriteLine(s.ToString());
                 }
                 else
                 {
@@ -158,15 +154,8 @@ namespace SimplifiedProgrammingLanguage
                 }
             }
         }
+
     }
+
 }
-
-
-/*
-
-
-* 
-* 
-* 
-/* 
-*/
+    

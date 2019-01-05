@@ -55,6 +55,7 @@
             // 
             // drawingCanvas
             // 
+            this.drawingCanvas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.drawingCanvas.Location = new System.Drawing.Point(12, 12);
             this.drawingCanvas.Name = "drawingCanvas";
             this.drawingCanvas.Size = new System.Drawing.Size(1308, 408);
