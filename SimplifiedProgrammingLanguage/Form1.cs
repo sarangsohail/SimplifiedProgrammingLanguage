@@ -47,8 +47,8 @@ namespace SimplifiedProgrammingLanguage
                 {
                     try
                     {
-                        string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                        penLocation = new PointF(float.Parse(param[0]), float.Parse(param[1]));
+                        string[] command = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        penLocation = new PointF(float.Parse(command[0]), float.Parse(command[1]));
 
                     }
                     catch (Exception ee)
@@ -141,19 +141,41 @@ namespace SimplifiedProgrammingLanguage
 
                 if (singleLineCommand[0].Equals("Repeat"))
                 {
-                    int quantity = int.Parse(singleLineCommand[1]);
+                    int repeatAmount = int.Parse(singleLineCommand[1]);
+                    //removes the '+' so the radius is there when going through the loop
+                    string operator_plus = singleLineCommand[3].Replace("+", "");
+
+                    //for plus repeat circle
                     if (singleLineCommand[2].Equals("Circle"))
                     {
                         float radius = 0;
-                        for (int ii = 0; ii < quantity; ii++)
+
+                        for (int ii = 0; ii < repeatAmount; ii++)
                         {
                             Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
                             //repeat quantity is * by the radius 
-                            radius += float.Parse(singleLineCommand[4].Replace("+", ""));
+                            radius += float.Parse(operator_plus);
                             shape.Set(penLocation.X - radius, penLocation.Y - radius, radius);
                             shapesArray.Add(shape);
                         }
                     }
+
+                   
+                    if (singleLineCommand[2].Equals("Rectangle"))
+                    {
+                        float height = 0, width = 0;
+                        for (int j = 0; j < repeatAmount; j++)
+                        {
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                            width += float.Parse(operator_plus);
+                            height += float.Parse(operator_plus);
+                            shape.Set(penLocation.X - (Width / 2), penLocation.Y - (height / 2), Width, height);
+                            shapesArray.Add(shape);
+                        }
+                    }
+
+                    
+
                 }
             
                 for (int j = 0; j < shapesArray.Count; j++)
