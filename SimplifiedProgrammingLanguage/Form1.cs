@@ -173,8 +173,19 @@ namespace SimplifiedProgrammingLanguage
                             shapesArray.Add(shape);
                         }
                     }
+                    if (singleLineCommand[2].Equals("Triangle"))
+                    {
+                        float bottom = 0, join = 0;
+                        for (int j = 0; j < repeatAmount; j++)
+                        {
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                            bottom += float.Parse(operator_plus);
+                            join += float.Parse(operator_plus);
+                            shape.Set(penLocation.X - (bottom / (float)(2 + Math.Sqrt(2))), penLocation.Y - (bottom / (float)(2 + Math.Sqrt(2))), bottom, join);
+                            shapesArray.Add(shape);
+                        }
+                    }
 
-                    
 
                 }
             
