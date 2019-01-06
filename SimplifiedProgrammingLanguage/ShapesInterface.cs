@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage
 {
-    //interface providing all methods necessary for when I create the shapesArray
+    //interface providing all methods necessary for when I create the shapes
     interface ShapesInterface
     {
         void Set(params float[] list);

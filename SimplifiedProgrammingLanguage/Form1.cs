@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,7 +11,7 @@ namespace SimplifiedProgrammingLanguage
         ArrayList shapesArray = new ArrayList();
         private PointF penLocation { get; set; }
 
-        Graphics g; 
+        Graphics g;
 
         public Form1()
         {
@@ -31,7 +30,7 @@ namespace SimplifiedProgrammingLanguage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             ShapeGenerator shapeGenerator = new ShapeGenerator();
 
             string input = commandInputter.Text;
@@ -46,36 +45,36 @@ namespace SimplifiedProgrammingLanguage
 
                 if (singleLineCommand[0].Equals("moveTo"))
                 {
-                        try
-                        {
-                            string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                            penLocation = new PointF(float.Parse(param[0]), float.Parse(param[1]));
+                    try
+                    {
+                        string[] param = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        penLocation = new PointF(float.Parse(param[0]), float.Parse(param[1]));
 
                     }
                     catch (Exception ee)
-                        {
-                            MessageBox.Show(ee.Message);
-                        }
-                    
+                    {
+                        MessageBox.Show(ee.Message);
+                    }
+
                 }
 
                 if (singleLineCommand[0].Equals("Circle"))
+                {
+                    try
                     {
-                        try
-                        {
                         string command = singleLineCommand[1];
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
-                            shape.Set(penLocation.X, penLocation.Y, float.Parse(command));
-                            shapesArray.Add(shape);
-                            shape.Draw(g);
+                        Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                        shape.Set(penLocation.X, penLocation.Y, float.Parse(command));
+                        shapesArray.Add(shape);
+                        shape.Draw(g);
 
                     }
                     catch (Exception ee)
-                        {
-                            MessageBox.Show(ee.Message);
-                        }
-
+                    {
+                        MessageBox.Show(ee.Message);
                     }
+
+                }
 
                 if (singleLineCommand[0].Equals("Triangle"))
                 {
@@ -92,24 +91,24 @@ namespace SimplifiedProgrammingLanguage
                     {
                         MessageBox.Show(ee.Message);
                     }
-                   
+
                 }
 
                 if (singleLineCommand[0].Equals("Rectangle"))
+                {
+                    try
                     {
-                        try
-                        {
-                            string shapeCommand = singleLineCommand[1];
-                            string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
-                            shape.Set(penLocation.X, penLocation.Y, float.Parse(command[0]), float.Parse(command[1]));
-                            shapesArray.Add(shape);
-                            shape.Draw(g);
+                        string shapeCommand = singleLineCommand[1];
+                        string[] command = shapeCommand.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                        Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                        shape.Set(penLocation.X, penLocation.Y, float.Parse(command[0]), float.Parse(command[1]));
+                        shapesArray.Add(shape);
+                        shape.Draw(g);
                     }
                     catch (Exception error)
-                        {
-                            MessageBox.Show("Oops, Shape error - ", error.Message);
-                        }
+                    {
+                        MessageBox.Show("Oops, Shape error - ", error.Message);
+                    }
                 }
 
 
@@ -127,11 +126,11 @@ namespace SimplifiedProgrammingLanguage
                             Points[j] = float.Parse(para[j - 2]);
                         }
 
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
-                            shape.Set(Points);
-                            shapesArray.Add(shape);
-                            shape.Draw(g);
-                        
+                        Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
+                        shape.Set(Points);
+                        shapesArray.Add(shape);
+                        shape.Draw(g);
+
                     }
                     catch (Exception ee)
                     {
@@ -139,36 +138,41 @@ namespace SimplifiedProgrammingLanguage
                     }
 
                 }
-            }
-            for (int j = 0; j < shapesArray.Count; j++)
-            {
-                Shape s;
-                s = (Shape)shapesArray[j];
-                if (s != null)
+
+                if (singleLineCommand[0].Equals("Repeat"))
                 {
-                    s.Draw(g);
-                    Console.WriteLine(s.ToString());
+                    int quantity = int.Parse(singleLineCommand[1]);
+                    if (singleLineCommand[2].Equals("Circle"))
+                    {
+                        float radius = 0;
+                        for (int ii = 0; ii < quantity; ii++)
+                        {
+                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                            //repeat quantity is * by the radius 
+                            radius += float.Parse(singleLineCommand[4].Replace("+", ""));
+                            shape.Set(penLocation.X - radius, penLocation.Y - radius, radius);
+                            shapesArray.Add(shape);
+                        }
+                    }
                 }
-                else
+            
+                for (int j = 0; j < shapesArray.Count; j++)
                 {
-                    Console.WriteLine("Wrong shape in array");
+                    Shape s;
+                    s = (Shape)shapesArray[j];
+                    if (s != null)
+                    {
+                        s.Draw(g);
+                        Console.WriteLine(s.ToString());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong shape in array");
+                    }
                 }
             }
-        }
-
-     
-
-        private void clearFormToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-
 }
-    

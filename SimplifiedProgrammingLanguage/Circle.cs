@@ -28,7 +28,7 @@ namespace SimplifiedProgrammingLanguage
         public override void Draw(Graphics g)
         {
 
-            Pen p = new Pen(Color.Black, 2);
+            Pen p = new Pen(Color.Black);
             SolidBrush b = new SolidBrush(Color.Black);
             g.DrawEllipse(p, x, y, radius * 2, radius * 2);
 

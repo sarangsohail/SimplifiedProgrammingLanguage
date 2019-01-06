@@ -24,7 +24,7 @@ namespace SimplifiedProgrammingLanguage
         public abstract void Draw(Graphics g); //any derrived class must implement this method
         //set is declared as virtual so it can be overridden by a more specific child version
         //but is here so it can be called by that child version to do the generic stuff
-        //note the use of the param keyword to provide a variable parameter list to cope with some shapesArray having more setup information than others
+        //note the use of the param keyword to provide a variable parameter list to cope with some shapes having more setup information than others
         public virtual void Set(params float[] coordinates)
         {
             x = coordinates[0];

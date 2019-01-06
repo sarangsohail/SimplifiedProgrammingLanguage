@@ -124,7 +124,7 @@
             this.clearFormToolStripMenuItem.Name = "clearFormToolStripMenuItem";
             this.clearFormToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.clearFormToolStripMenuItem.Text = "Clear Form";
-            this.clearFormToolStripMenuItem.Click += new System.EventHandler(this.clearFormToolStripMenuItem_Click);
+            
             // 
             // penStatusButton
             // 
@@ -134,7 +134,7 @@
             this.penStatusButton.Size = new System.Drawing.Size(92, 32);
             this.penStatusButton.TabIndex = 5;
             this.penStatusButton.UseVisualStyleBackColor = false;
-            this.penStatusButton.Click += new System.EventHandler(this.button3_Click);
+            
             // 
             // Form1
             // 
