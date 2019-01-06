@@ -93,7 +93,6 @@ namespace SimplifiedProgrammingLanguage
                     }
 
                 }
-
                 if (singleLineCommand[0].Equals("Rectangle"))
                 {
                     try
@@ -110,6 +109,7 @@ namespace SimplifiedProgrammingLanguage
                         MessageBox.Show("Oops, Shape error - ", error.Message);
                     }
                 }
+
 
 
                 if (singleLineCommand[0].Equals("Polygon"))
@@ -159,24 +159,23 @@ namespace SimplifiedProgrammingLanguage
                             shapesArray.Add(shape);
                         }
                     }
-
-                   
                     if (singleLineCommand[2].Equals("Rectangle"))
                     {
                         float height = 0, width = 0;
-                        for (int j = 0; j < repeatAmount; j++)
+                        for (int ii = 0; ii < repeatAmount; ii++)
                         {
                             Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
                             width += float.Parse(operator_plus);
                             height += float.Parse(operator_plus);
-                            shape.Set(penLocation.X - (Width / 2), penLocation.Y - (height / 2), Width, height);
+                            shape.Set(penLocation.X - Width / 2, penLocation.Y - height / 2, Width, height);
                             shapesArray.Add(shape);
                         }
                     }
+                    
                     if (singleLineCommand[2].Equals("Triangle"))
                     {
                         float bottom = 0, join = 0;
-                        for (int j = 0; j < repeatAmount; j++)
+                        for (int ii = 0; ii < repeatAmount; ii++)
                         {
                             Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
                             bottom += float.Parse(operator_plus);
@@ -185,7 +184,6 @@ namespace SimplifiedProgrammingLanguage
                             shapesArray.Add(shape);
                         }
                     }
-
                 }
             
                 for (int j = 0; j < shapesArray.Count; j++)
