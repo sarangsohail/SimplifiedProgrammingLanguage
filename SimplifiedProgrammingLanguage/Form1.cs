@@ -186,7 +186,6 @@ namespace SimplifiedProgrammingLanguage
                         }
                     }
 
-
                 }
             
                 for (int j = 0; j < shapesArray.Count; j++)
