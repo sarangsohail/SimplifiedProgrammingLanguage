@@ -62,6 +62,7 @@ namespace SimplifiedProgrammingLanguage
                 string line = commands[i];
                 string[] singleLineCommand = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
+            
 
                 if (singleLineCommand[0].Equals("moveTo"))
                 {
@@ -77,7 +78,7 @@ namespace SimplifiedProgrammingLanguage
                     }
 
                 }
-
+                
                 else if (singleLineCommand[0].Equals("Circle"))
                 {
                     try
@@ -263,5 +264,20 @@ namespace SimplifiedProgrammingLanguage
            
         }
 
+        private void penStatusButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void clearFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            
+        }
     }
 }

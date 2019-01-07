@@ -66,7 +66,6 @@ namespace SimplifiedProgrammingLanguage
             this.commandInputter.Name = "commandInputter";
             this.commandInputter.Size = new System.Drawing.Size(641, 61);
             this.commandInputter.TabIndex = 0;
-            this.commandInputter.TextChanged += new System.EventHandler(this.commandInputter_TextChanged);
             // 
             // button1
             // 
@@ -101,14 +100,14 @@ namespace SimplifiedProgrammingLanguage
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.loadToolStripMenuItem.Text = "Load";
             // 
             // exitToolStripMenuItem
@@ -116,6 +115,7 @@ namespace SimplifiedProgrammingLanguage
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -141,6 +141,7 @@ namespace SimplifiedProgrammingLanguage
             this.clearFormToolStripMenuItem.Name = "clearFormToolStripMenuItem";
             this.clearFormToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.clearFormToolStripMenuItem.Text = "Clear Form";
+            this.clearFormToolStripMenuItem.Click += new System.EventHandler(this.clearFormToolStripMenuItem_Click);
             // 
             // penStatusButton
             // 
@@ -150,6 +151,7 @@ namespace SimplifiedProgrammingLanguage
             this.penStatusButton.Size = new System.Drawing.Size(92, 32);
             this.penStatusButton.TabIndex = 5;
             this.penStatusButton.UseVisualStyleBackColor = false;
+            this.penStatusButton.Click += new System.EventHandler(this.penStatusButton_Click);
             // 
             // Form1
             // 
