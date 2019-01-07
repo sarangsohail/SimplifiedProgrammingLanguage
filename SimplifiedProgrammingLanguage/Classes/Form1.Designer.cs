@@ -48,14 +48,12 @@ namespace SimplifiedProgrammingLanguage
             this.button1 = new System.Windows.Forms.Button();
             this.drawingCanvas = new System.Windows.Forms.PictureBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clearFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penStatusButton = new System.Windows.Forms.Button();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.drawingCanvas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,37 +85,30 @@ namespace SimplifiedProgrammingLanguage
             this.drawingCanvas.Size = new System.Drawing.Size(1308, 376);
             this.drawingCanvas.TabIndex = 2;
             this.drawingCanvas.TabStop = false;
+            this.drawingCanvas.Click += new System.EventHandler(this.drawingCanvas_Click);
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.loadToolStripMenuItem,
             this.exitToolStripMenuItem,
             this.signOutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
-            this.loadToolStripMenuItem.Text = "Load";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // signOutToolStripMenuItem
+            // 
+            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.signOutToolStripMenuItem.Text = "Sign out";
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -155,13 +146,6 @@ namespace SimplifiedProgrammingLanguage
             this.penStatusButton.TabIndex = 5;
             this.penStatusButton.UseVisualStyleBackColor = false;
             this.penStatusButton.Click += new System.EventHandler(this.penStatusButton_Click);
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.signOutToolStripMenuItem.Text = "Sign out";
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -205,14 +189,6 @@ namespace SimplifiedProgrammingLanguage
         /// The file tool strip menu item
         /// </summary>
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        /// <summary>
-        /// The save tool strip menu item
-        /// </summary>
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        /// <summary>
-        /// The load tool strip menu item
-        /// </summary>
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         /// <summary>
         /// The exit tool strip menu item
         /// </summary>

@@ -69,7 +69,7 @@ namespace SimplifiedProgrammingLanguage
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void penStatusButton_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace SimplifiedProgrammingLanguage
 
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        public void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -85,6 +85,7 @@ namespace SimplifiedProgrammingLanguage
         private void clearFormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             g.Clear(Color.White);
+            commandInputter.Clear();
 
         }
 
@@ -100,7 +101,7 @@ namespace SimplifiedProgrammingLanguage
                 {
                     string[] command = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                     penLocation = new PointF(float.Parse(command[0]), float.Parse(command[1]));
-                    
+                    penStatusButton.BackColor = Color.Green;
                 }
                 catch (Exception ee)
                 {
@@ -113,6 +114,7 @@ namespace SimplifiedProgrammingLanguage
             {
                 try
                 {
+                    penStatusButton.BackColor = Color.Green;
                     string command = singleLineCommand[1];
                     Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
                     shape.Set(penLocation.X, penLocation.Y, float.Parse(command));
@@ -137,6 +139,8 @@ namespace SimplifiedProgrammingLanguage
                     shapes.Set(penLocation.X, penLocation.Y, float.Parse(para[0]), float.Parse(para[1]));
                     shapesArray.Add(shapes);
                     shapes.Draw(g);
+                    penStatusButton.BackColor = Color.Green;
+
                 }
                 catch (Exception ee)
                 {
@@ -196,6 +200,7 @@ namespace SimplifiedProgrammingLanguage
                 int repeatAmount = int.Parse(singleLineCommand[1]);
                 //removes the '+' so the radius is there when going through the loop
                 string operator_plus = singleLineCommand[3].Replace("+", "");
+                penStatusButton.BackColor = Color.Green;
 
                 //for plus repeat circle
                 if (singleLineCommand[2].Equals("Circle"))
@@ -301,6 +306,11 @@ namespace SimplifiedProgrammingLanguage
             SignOutForm f = new SignOutForm();
             this.Hide();
             f.Show();
+
+        }
+
+        private void drawingCanvas_Click(object sender, EventArgs e)
+        {
 
         }
     }

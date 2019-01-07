@@ -8,9 +8,17 @@ using System.Threading.Tasks;
 
 namespace SimplifiedProgrammingLanguage.Tests
 {
+    /// <summary>
+    /// Defines test class SignOutFormSubmitButtonClass.
+    /// </summary>
     [TestClass()]
     public class SignOutFormSubmitButtonClass
     {
+        /// <summary>
+        /// Defines the test method Submitbtn_ClickTest.
+        /// Determines what the username and password should be and therefore
+        /// whether access is gained back to the main form
+        /// </summary>
         [TestMethod()]
         public void Submitbtn_ClickTest()
         {
