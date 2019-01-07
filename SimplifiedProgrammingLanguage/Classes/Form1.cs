@@ -59,7 +59,7 @@ namespace SimplifiedProgrammingLanguage
 
                 }
 
-                if (singleLineCommand[0].Equals("Circle"))
+                else if (singleLineCommand[0].Equals("Circle"))
                 {
                     try
                     {
@@ -77,7 +77,7 @@ namespace SimplifiedProgrammingLanguage
 
                 }
 
-                if (singleLineCommand[0].Equals("Triangle"))
+                else if (singleLineCommand[0].Equals("Triangle"))
                 {
                     try
                     {
@@ -94,7 +94,7 @@ namespace SimplifiedProgrammingLanguage
                     }
 
                 }
-                if (singleLineCommand[0].Equals("Rectangle"))
+                else if (singleLineCommand[0].Equals("Rectangle"))
                 {
                     try
                     {
@@ -113,7 +113,7 @@ namespace SimplifiedProgrammingLanguage
 
 
 
-                if (singleLineCommand[0].Equals("Polygon"))
+                else if (singleLineCommand[0].Equals("Polygon"))
                 {
                     try
                     {
@@ -140,7 +140,7 @@ namespace SimplifiedProgrammingLanguage
 
                 }
 
-                if (singleLineCommand[0].Equals("Repeat"))
+               else if (singleLineCommand[0].Equals("Repeat"))
                 {
                                         
                     int repeatAmount = int.Parse(singleLineCommand[1]);
@@ -209,6 +209,11 @@ namespace SimplifiedProgrammingLanguage
                             
                         }
                     }
+                }
+
+                else
+                {
+                    MessageBox.Show("Invalid Command Entered");
                 }
             
                 for (int j = 0; j < shapesArray.Count; j++)
