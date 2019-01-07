@@ -30,7 +30,7 @@ namespace SimplifiedProgrammingLanguage
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        private void Submitbtn_Click(object sender, EventArgs e)
+        public void Submitbtn_Click(object sender, EventArgs e)
         {
             string username, password;
 
@@ -44,6 +44,11 @@ namespace SimplifiedProgrammingLanguage
                 this.Hide();
                 form1.Show();
             }
+        }
+
+        private void SignOutForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

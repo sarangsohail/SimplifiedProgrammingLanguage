@@ -93,14 +93,14 @@ namespace SimplifiedProgrammingLanguage
 
             ShapeGenerator shapeGenerator = new ShapeGenerator();
                           
-
-             if (singleLineCommand[0].Equals("moveTo"))
-            {
+            
+            if (singleLineCommand[0].Equals("moveTo"))
+             {
                 try
                 {
                     string[] command = singleLineCommand[1].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                     penLocation = new PointF(float.Parse(command[0]), float.Parse(command[1]));
-
+                    
                 }
                 catch (Exception ee)
                 {

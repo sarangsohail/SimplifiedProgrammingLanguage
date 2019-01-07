@@ -89,6 +89,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SignOutForm";
             this.Text = "SignOutForm";
+            this.Load += new System.EventHandler(this.SignOutForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

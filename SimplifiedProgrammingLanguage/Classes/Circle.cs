@@ -29,7 +29,7 @@ namespace SimplifiedProgrammingLanguage
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
         /// <param name="radius">The radius.</param>
-        public Circle(Color colour, int x, int y, int radius) : base(x, y)
+        public Circle(int x, int y, int radius) : base(x, y)
         {
             this.radius = radius; //Different from Shape
         }
