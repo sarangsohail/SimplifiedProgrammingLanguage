@@ -1,9 +1,18 @@
-﻿namespace SimplifiedProgrammingLanguage
+﻿
+namespace SimplifiedProgrammingLanguage
 {
+    /// <summary>
+    /// Class Form1.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     partial class Form1
     {
         /// <summary>
         /// Required designer variable.
+        /// </summary>
+        /// <summary>
+        /// The components
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
@@ -11,6 +20,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <summary>
+        /// Disposes of the resources (other than memory) used by the <see cref="T:System.Windows.Forms.Form" />.
+        /// </summary>
+        /// <param name="disposing"><see langword="true" /> to release both managed and unmanaged resources; <see langword="false" /> to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -25,6 +38,9 @@
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
+        /// </summary>
+        /// <summary>
+        /// Initializes the component.
         /// </summary>
         private void InitializeComponent()
         {
@@ -60,7 +76,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Run";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.RunButton);
             // 
             // drawingCanvas
             // 
@@ -160,16 +176,49 @@
 
         #endregion
 
+        /// <summary>
+        /// The command inputter
+        /// </summary>
         private System.Windows.Forms.TextBox commandInputter;
+        /// <summary>
+        /// The button1
+        /// </summary>
         private System.Windows.Forms.Button button1;
+        /// <summary>
+        /// The drawing canvas
+        /// </summary>
         private System.Windows.Forms.PictureBox drawingCanvas;
+        /// <summary>
+        /// The file tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        /// <summary>
+        /// The save tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        /// <summary>
+        /// The load tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        /// <summary>
+        /// The exit tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        /// <summary>
+        /// The about tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        /// <summary>
+        /// The menu strip1
+        /// </summary>
         private System.Windows.Forms.MenuStrip menuStrip1;
+        /// <summary>
+        /// The clear form tool strip menu item
+        /// </summary>
         private System.Windows.Forms.ToolStripMenuItem clearFormToolStripMenuItem;
+        /// <summary>
+        /// The pen status button
+        /// </summary>
         private System.Windows.Forms.Button penStatusButton;
     }
 }

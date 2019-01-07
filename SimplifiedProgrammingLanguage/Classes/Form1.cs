@@ -6,14 +6,30 @@ using System.Windows.Forms;
 
 namespace SimplifiedProgrammingLanguage
 {
+    /// <summary>
+    /// Class Form1.
+    /// Implements Form" />
+    /// </summary/>
     public partial class Form1 : Form
     {
-
+        /// <summary>
+        /// Shapes array
+        /// </summary>
         ArrayList shapesArray = new ArrayList();
+        /// <summary>
+        /// Gets or sets the pen location.
+        /// </summary>
+        /// <value>The pen location.</value>
         private PointF penLocation { get; set; }
 
+        /// <summary>
+        /// Graphics Class Reference
+        /// </summary>
         Graphics g;
 
+        /// <summary>
+        /// Initialises a new instance of the <see cref="Form1"/> class.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -22,14 +38,17 @@ namespace SimplifiedProgrammingLanguage
             g.Clear(Color.White);
         }
 
+        /// <summary>
+        /// The pen status
+        /// </summary>
         Boolean penStatus = false;
 
-        private void commandInputter_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+         /// <summary>
+        /// Handles the Click event of the RunButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void RunButton(object sender, EventArgs e)
         {
 
             ShapeGenerator shapeGenerator = new ShapeGenerator();
@@ -234,6 +253,11 @@ namespace SimplifiedProgrammingLanguage
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the saveToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
            

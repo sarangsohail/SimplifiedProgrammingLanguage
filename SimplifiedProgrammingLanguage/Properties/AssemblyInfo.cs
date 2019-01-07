@@ -1,4 +1,17 @@
-﻿using System.Reflection;
+﻿// ***********************************************************************
+// Assembly         : SimplifiedProgrammingLanguage
+// Author           : sarang
+// Created          : 12-06-2018
+//
+// Last Modified By : sarang
+// Last Modified On : 12-06-2018
+// ***********************************************************************
+// <copyright file="AssemblyInfo.cs" company="">
+//     Copyright ©  2018
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
