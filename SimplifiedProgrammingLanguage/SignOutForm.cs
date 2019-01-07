@@ -10,13 +10,26 @@ using System.Windows.Forms;
 
 namespace SimplifiedProgrammingLanguage
 {
+    /// <summary>
+    /// Class SignOutForm.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class SignOutForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignOutForm"/> class.
+        /// </summary>
         public SignOutForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Click event of the Submitbtn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Submitbtn_Click(object sender, EventArgs e)
         {
             string username, password;
