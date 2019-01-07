@@ -59,7 +59,7 @@ namespace SimplifiedProgrammingLanguage
                 string line = commands[i];
                 string[] singleLineCommands = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
      
-                        commandsParser(singleLineCommands);  
+                commandsParser(singleLineCommands);  
             }
         }
         /// <summary>
@@ -92,8 +92,9 @@ namespace SimplifiedProgrammingLanguage
         {
 
             ShapeGenerator shapeGenerator = new ShapeGenerator();
+                          
 
-            if (singleLineCommand[0].Equals("moveTo"))
+             if (singleLineCommand[0].Equals("moveTo"))
             {
                 try
                 {
