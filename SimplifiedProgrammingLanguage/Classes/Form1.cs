@@ -42,7 +42,7 @@ namespace SimplifiedProgrammingLanguage
         /// <summary>
         /// The pen status
         /// </summary>
-        Boolean penStatus = false;
+        Boolean penUp = false;
         /// <summary>
         /// Handles the Click event of the RunButton control.
         /// </summary>
@@ -58,8 +58,8 @@ namespace SimplifiedProgrammingLanguage
             {
                 string line = commands[i];
                 string[] singleLineCommands = line.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-
-                    commandsParser(singleLineCommands);            
+     
+                        commandsParser(singleLineCommands);  
             }
         }
         /// <summary>
@@ -87,6 +87,7 @@ namespace SimplifiedProgrammingLanguage
             g.Clear(Color.White);
 
         }
+
         public void commandsParser(String[] singleLineCommand)
         {
 
@@ -256,7 +257,10 @@ namespace SimplifiedProgrammingLanguage
                         MessageBox.Show(ee.Message);
 
                     }
+
                 }
+
+
                 for (int ii = 0; ii < shapesArray.Count; ii++)
                 {
                     Shape s;
@@ -272,6 +276,11 @@ namespace SimplifiedProgrammingLanguage
                     }
                 }
 
+            }
+
+            else
+            {
+                MessageBox.Show("Invalid Text Entered");
             }
 
         }
