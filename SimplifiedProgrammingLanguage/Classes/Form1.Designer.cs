@@ -85,19 +85,20 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.loadToolStripMenuItem.Text = "Load";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // aboutToolStripMenuItem
@@ -124,7 +125,6 @@
             this.clearFormToolStripMenuItem.Name = "clearFormToolStripMenuItem";
             this.clearFormToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.clearFormToolStripMenuItem.Text = "Clear Form";
-            
             // 
             // penStatusButton
             // 
@@ -134,7 +134,6 @@
             this.penStatusButton.Size = new System.Drawing.Size(92, 32);
             this.penStatusButton.TabIndex = 5;
             this.penStatusButton.UseVisualStyleBackColor = false;
-            
             // 
             // Form1
             // 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace SimplifiedProgrammingLanguage
@@ -121,9 +122,9 @@ namespace SimplifiedProgrammingLanguage
                         float[] Points = new float[para.Length + 2];
                         Points[0] = penLocation.X;
                         Points[1] = penLocation.Y;
-                        for (int j = 2; j < Points.Length; j++)
+                        for (int ii = 2; ii < Points.Length; ii++)
                         {
-                            Points[j] = float.Parse(para[j - 2]);
+                            Points[ii] = float.Parse(para[ii - 2]);
                         }
 
                         Shape shape = shapeGenerator.GetShape(singleLineCommand[0]);
@@ -141,6 +142,7 @@ namespace SimplifiedProgrammingLanguage
 
                 if (singleLineCommand[0].Equals("Repeat"))
                 {
+                                        
                     int repeatAmount = int.Parse(singleLineCommand[1]);
                     //removes the '+' so the radius is there when going through the loop
                     string operator_plus = singleLineCommand[3].Replace("+", "");
@@ -148,40 +150,63 @@ namespace SimplifiedProgrammingLanguage
                     //for plus repeat circle
                     if (singleLineCommand[2].Equals("Circle"))
                     {
-                        float radius = 0;
-
-                        for (int ii = 0; ii < repeatAmount; ii++)
+                        try
                         {
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
-                            //repeat quantity is * by the radius 
-                            radius += float.Parse(operator_plus);
-                            shape.Set(penLocation.X - radius, penLocation.Y - radius, radius);
-                            shapesArray.Add(shape);
+                            float radius = 0;
+
+                            for (int ii = 0; ii < repeatAmount; ii++)
+                            {
+                                Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                                //repeat quantity is * by the radius 
+                                radius += float.Parse(operator_plus);
+                                shape.Set(penLocation.X - radius, penLocation.Y - radius, radius);
+                                shapesArray.Add(shape);
+                            }
+                        }
+                        catch (Exception ee)
+                        {
+                            MessageBox.Show(ee.Message);
+                          
                         }
                     }
                     if (singleLineCommand[2].Equals("Rectangle"))
                     {
-                        float height = 0, width = 0;
-                        for (int ii = 0; ii < repeatAmount; ii++)
+                        try
                         {
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
-                            width += float.Parse(operator_plus);
-                            height += float.Parse(operator_plus);
-                            shape.Set(penLocation.X - Width / 2, penLocation.Y - height / 2, Width, height);
-                            shapesArray.Add(shape);
+                            float height = 0, width = 0;
+                            for (int ii = 0; ii < repeatAmount; ii++)
+                            {
+                                Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                                width += float.Parse(operator_plus);
+                                height += float.Parse(operator_plus);
+                                shape.Set(penLocation.X - Width / 2, penLocation.Y - height / 2, Width, height);
+                                shapesArray.Add(shape);
+                            }
+                        }
+                        catch (Exception ee)
+                        {
+                            MessageBox.Show(ee.Message);
                         }
                     }
                     
                     if (singleLineCommand[2].Equals("Triangle"))
                     {
-                        float bottom = 0, join = 0;
-                        for (int ii = 0; ii < repeatAmount; ii++)
+                        try
                         {
-                            Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
-                            bottom += float.Parse(operator_plus);
-                            join += float.Parse(operator_plus);
-                            shape.Set(penLocation.X - (bottom / (float)(2 + Math.Sqrt(2))), penLocation.Y - (bottom / (float)(2 + Math.Sqrt(2))), bottom, join);
-                            shapesArray.Add(shape);
+                            float bottom = 0, join = 0;
+                            for (int ii = 0; ii < repeatAmount; ii++)
+                            {
+                                Shape shape = shapeGenerator.GetShape(singleLineCommand[2]);
+                                bottom += float.Parse(operator_plus);
+                                join += float.Parse(operator_plus);
+                                shape.Set(penLocation.X - (bottom / (float)(2 + Math.Sqrt(2))), penLocation.Y - (bottom / (float)(2 + Math.Sqrt(2))), bottom, join);
+                                shapesArray.Add(shape);
+                            }
+                        }
+                        catch (Exception ee)
+                        {
+                            MessageBox.Show(ee.Message);
+                            
                         }
                     }
                 }
@@ -202,6 +227,11 @@ namespace SimplifiedProgrammingLanguage
                 }
             }
 
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
 
     }
